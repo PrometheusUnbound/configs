@@ -73,6 +73,9 @@ plugins=(git asdf autojump zsh-syntax-highlighting zsh-autosuggestions)
 source $ZSH/oh-my-zsh.sh
 
 # export MANPATH="/usr/local/man:$MANPATH"
+export PATH=/opt/homebrew/bin:$PATH
+
+export TERM=xterm-256color
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -83,6 +86,9 @@ source $ZSH/oh-my-zsh.sh
 # else
 #   export EDITOR='mvim'
 # fi
+
+# Editor
+export EDITOR="nvim"
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -96,9 +102,15 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias tm="tmux"
+alias tms="tm new -s"
+alias tma="tm a -t"
 alias pg="sudo -u postgres psql"
 alias pgc="sudo su - postgres -c"
 alias gpsuo='git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)'
+alias gnb='git checkout -B'
+alias gall='git add .'
 alias vim='nvim'
+# for rustup doc on apple sillicon before it becomes tier1 platform
+alias rustdoc="rustup doc --toolchain=stable-x86_64-apple-darwin"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

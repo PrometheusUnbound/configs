@@ -25,23 +25,29 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " different version somewhere else.
 " Plugin 'ascenator/L9', {'name': 'newL9'}
 
-Plugin 'scrooloose/syntastic'
-
-Plugin 'scrooloose/nerdtree'
-
 Plugin 'vim-airline/vim-airline'
+
+Plugin 'xuyuanp/nerdtree-git-plugin'
 
 Plugin 'tpope/vim-surround'
 
 Plugin 'tomtom/tcomment_vim'
 
+Plugin 'joshdick/onedark.vim'
+
+Plugin 'junegunn/fzf'
+
 Plugin 'altercation/vim-colors-solarized'
 
 Plugin 'vim-airline/vim-airline-themes'
 
-Plugin 'xuyuanp/nerdtree-git-plugin'
-
 Plugin 'elixir-lang/vim-elixir'
+
+Plugin 'preservim/nerdtree'
+
+Plugin 'sheerun/vim-polyglot'
+
+Plugin 'vim-syntastic/syntastic'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -132,13 +138,16 @@ set ignorecase
 set smartcase
 
 " Map buffer commands
-nmap zn :bn<CR>
-nmap zp :bp<CR>
-nmap zd :bd<CR>
+nmap mn :bn<CR>
+nmap mp :bp<CR>
+nnoremap md :bp\|bd #<CR>
 
 " Better splitting
 set splitbelow
 set splitright
+
+" Dark background
+set background=dark
 
 " Better split movement
 nmap <C-J> <C-W><C-J>
@@ -150,6 +159,7 @@ nmap <C-L> <C-W><C-L>
 imap jj <Esc>
 imap jk <Esc>
 
-" add a ruler
-set colorcolumn=80
-highlight ColorColumn ctermbg=0 guibg=black
+" colorscheme
+syntax on
+colorscheme onedark
+
